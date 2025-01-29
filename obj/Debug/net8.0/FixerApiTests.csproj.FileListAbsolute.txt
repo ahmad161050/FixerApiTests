@@ -107,3 +107,4 @@
 /Users/ahmadraza/FixerApiTests/obj/Debug/net8.0/FixerApiTests.pdb
 /Users/ahmadraza/FixerApiTests/obj/Debug/net8.0/FixerApiTests.genruntimeconfig.cache
 /Users/ahmadraza/FixerApiTests/obj/Debug/net8.0/ref/FixerApiTests.dll
+/Users/ahmadraza/FixerApiTests/obj/Debug/net8.0/FixerApiTests.sourcelink.json

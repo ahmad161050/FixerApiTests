@@ -22,7 +22,7 @@ namespace FixerApiTests.Steps
 
         private async Task<HttpResponseMessage> SendRequest(string queryParams)
         {
-            string requestUrl = $"{_fixerApiPage.Endpoint}?access_key={_fixerApiPage.ApiKey}{queryParams}";
+            string requestUrl = $"{_fixerApiPage.ValidEndpoint}?access_key={_fixerApiPage.ValidApiKey}{queryParams}";
 
             Console.WriteLine($"[REQUEST] GET {requestUrl}");  // Logging request URL
 
@@ -43,7 +43,7 @@ namespace FixerApiTests.Steps
         [Given(@"user has a valid API key")]
         public void GivenUserHasAValidAPIKey()
         {
-            Assert.IsNotNull(_fixerApiPage.ApiKey, "API Key is missing");
+            Assert.IsNotNull(_fixerApiPage.ValidApiKey, "API Key is missing");
         }
 
         [When(@"user requests currency rates")]
@@ -53,7 +53,7 @@ namespace FixerApiTests.Steps
             string responseContent = await _response.Content.ReadAsStringAsync();
             _jsonResponse = JObject.Parse(responseContent);
 
-            TestContext.WriteLine($"[API CALL] GET {_fixerApiPage.Endpoint}?access_key=****");
+            TestContext.WriteLine($"[API CALL] GET {_fixerApiPage.ValidEndpoint}?access_key=****");
             TestContext.WriteLine($"[RESPONSE] {responseContent}");
         }
 
@@ -98,7 +98,7 @@ namespace FixerApiTests.Steps
         [Given(@"user has an invalid API key")]
         public void GivenUserHasAnInvalidAPIKey()
         {
-            _fixerApiPage.ApiKey = _fixerApiPage.InvalidApiKey;
+            _fixerApiPage.ValidApiKey = _fixerApiPage.InvalidApiKey;
         }
 
         [Then(@"the response should indicate an error with code 101")]
@@ -117,7 +117,7 @@ namespace FixerApiTests.Steps
         [Given(@"user tries to access an invalid API endpoint")]
         public void GivenUserTriesToAccessAnInvalidApiEndpoint()
         {
-            _fixerApiPage.Endpoint = _fixerApiPage.InvalidEndpoint;  // Set to invalid API endpoint
+            _fixerApiPage.ValidEndpoint = _fixerApiPage.InvalidEndpoint;  // Set to invalid API endpoint
         }
 
         [When(@"user requests currency rates from the invalid endpoint")]
