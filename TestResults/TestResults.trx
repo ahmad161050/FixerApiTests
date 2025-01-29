@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="642bfa3f-9519-43c9-8c9f-7630435432e9" name="@MB0055 2025-01-29 23:22:30" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-01-29T23:22:30.2511170+01:00" queuing="2025-01-29T23:22:30.2511170+01:00" start="2025-01-29T23:22:28.6147080+01:00" finish="2025-01-29T23:22:30.2539820+01:00" />
+  <TestSettings name="default" id="144d5f31-e417-450f-ad24-d425d2785738">
+    <Deployment runDeploymentRoot="_MB0055_2025-01-29_23_22_30" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="193e96a8-6256-4e39-ba88-2d630f660b16" testId="e7f71ed1-46c7-db51-7442-7431eeb55745" testName="FetchAllCurrencyRatesWithAValidAPIKey" computerName="MB0055" duration="00:00:00.3294910" startTime="2025-01-29T23:22:29.0833100+01:00" endTime="2025-01-29T23:22:29.4127460+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="193e96a8-6256-4e39-ba88-2d630f660b16">
+      <Output>
+        <StdOut>Given user has a valid API key
+-&gt; done: FixerApiSteps.GivenUserHasAValidAPIKey() (0.0s)
+When user requests currency rates
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a51694
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"AED":3.826777,"AFN":81.783858,"ALL":99.863179,"AMD":414.947015,"ANG":1.878925,"AOA":952.769476,"ARS":1095.180077,"AUD":1.672952,"AWG":1.875372,"AZN":1.76625,"BAM":1.960312,"BBD":2.105035,"BDT":126.671581,"BGN":1.95732,"BHD":0.392752,"BIF":3045.395522,"BMD":1.041873,"BND":1.408536,"BOB":7.203686,"BRL":6.101422,"BSD":1.042595,"BTC":1.0031392e-5,"BTN":90.2745,"BWP":14.510401,"BYN":3.411837,"BYR":20420.715784,"BZD":2.09419,"CAD":1.502282,"CDF":2964.129475,"CHF":0.945089,"CLF":0.037449,"CLP":1033.329289,"CNY":7.469291,"CNH":7.569079,"COP":4344.173884,"CRC":528.909866,"CUC":1.041873,"CUP":27.609641,"CVE":110.747602,"CZK":25.127847,"DJF":185.161954,"DKK":7.463167,"DOP":64.335359,"DZD":140.84979,"EGP":52.316208,"ERN":15.628099,"ETB":131.170257,"EUR":1,"FJD":2.442932,"FKP":0.858073,"GBP":0.837088,"GEL":3.000867,"GGP":0.858073,"GHS":15.938848,"GIP":0.858073,"GMD":75.01531,"GNF":9017.413057,"GTQ":8.064564,"GYD":218.122088,"HKD":8.117693,"HNL":26.674775,"HRK":7.688554,"HTG":136.263005,"HUF":408.133149,"IDR":16929.398509,"ILS":3.759047,"IMP":0.858073,"INR":90.206689,"IQD":1364.853963,"IRR":43849.846464,"ISK":145.695901,"JEP":0.858073,"JMD":164.056061,"JOD":0.739108,"JPY":161.693,"KES":134.923556,"KGS":91.111983,"KHR":4189.372103,"KMF":492.079934,"KPW":937.686045,"KRW":1504.27716,"KWD":0.321303,"KYD":0.8688,"KZT":539.363779,"LAK":22676.371243,"LBP":93299.749654,"LKR":309.111534,"LRD":204.726483,"LSL":19.326843,"LTL":3.076381,"LVL":0.630218,"LYD":5.115938,"MAD":10.414044,"MDL":19.417697,"MGA":4886.385748,"MKD":61.517516,"MMK":3383.963689,"MNT":3540.28543,"MOP":8.36714,"MRU":41.518943,"MUR":48.321927,"MVR":16.043579,"MWK":1808.174886,"MXN":21.384652,"MYR":4.574388,"MZN":66.569558,"NAD":19.326694,"NGN":1618.279078,"NIO":38.32021,"NOK":11.776476,"NPR":144.44079,"NZD":1.841823,"OMR":0.401111,"PAB":1.042615,"PEN":3.868991,"PGK":4.170102,"PHP":60.96782,"PKR":290.266074,"PLN":4.201194,"PYG":8238.885747,"QAR":3.793721,"RON":4.974214,"RSD":117.143021,"RUB":103.391208,"RWF":1451.85038,"SAR":3.907737,"SBD":8.792806,"SCR":15.644653,"SDG":626.166248,"SEK":11.466742,"SGD":1.405789,"SHP":0.858073,"SLE":23.832886,"SLL":21847.561123,"SOS":595.429625,"SRD":36.574988,"STD":21564.67283,"SVC":9.121998,"SYP":13546.436037,"SZL":19.326579,"THB":35.162981,"TJS":11.363758,"TMT":3.646556,"TND":3.328775,"TOP":2.440166,"TRY":37.314617,"TTD":7.054136,"TWD":34.242098,"TZS":2647.221821,"UAH":43.698769,"UGX":3846.854951,"USD":1.041873,"UYU":45.323895,"UZS":13523.514911,"VES":59.721688,"VND":26130.181218,"VUV":123.693285,"WST":2.918107,"XAF":657.467247,"XAG":0.033783,"XAU":0.000378,"XCD":2.815714,"XDR":0.796931,"XOF":655.86077,"XPF":119.331742,"YER":259.426304,"ZAR":19.324142,"ZMK":9378.168045,"ZMW":29.113434,"ZWL":335.482763}}
+[API CALL] GET http://data.fixer.io/api/latest?access_key=****
+[RESPONSE] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"AED":3.826777,"AFN":81.783858,"ALL":99.863179,"AMD":414.947015,"ANG":1.878925,"AOA":952.769476,"ARS":1095.180077,"AUD":1.672952,"AWG":1.875372,"AZN":1.76625,"BAM":1.960312,"BBD":2.105035,"BDT":126.671581,"BGN":1.95732,"BHD":0.392752,"BIF":3045.395522,"BMD":1.041873,"BND":1.408536,"BOB":7.203686,"BRL":6.101422,"BSD":1.042595,"BTC":1.0031392e-5,"BTN":90.2745,"BWP":14.510401,"BYN":3.411837,"BYR":20420.715784,"BZD":2.09419,"CAD":1.502282,"CDF":2964.129475,"CHF":0.945089,"CLF":0.037449,"CLP":1033.329289,"CNY":7.469291,"CNH":7.569079,"COP":4344.173884,"CRC":528.909866,"CUC":1.041873,"CUP":27.609641,"CVE":110.747602,"CZK":25.127847,"DJF":185.161954,"DKK":7.463167,"DOP":64.335359,"DZD":140.84979,"EGP":52.316208,"ERN":15.628099,"ETB":131.170257,"EUR":1,"FJD":2.442932,"FKP":0.858073,"GBP":0.837088,"GEL":3.000867,"GGP":0.858073,"GHS":15.938848,"GIP":0.858073,"GMD":75.01531,"GNF":9017.413057,"GTQ":8.064564,"GYD":218.122088,"HKD":8.117693,"HNL":26.674775,"HRK":7.688554,"HTG":136.263005,"HUF":408.133149,"IDR":16929.398509,"ILS":3.759047,"IMP":0.858073,"INR":90.206689,"IQD":1364.853963,"IRR":43849.846464,"ISK":145.695901,"JEP":0.858073,"JMD":164.056061,"JOD":0.739108,"JPY":161.693,"KES":134.923556,"KGS":91.111983,"KHR":4189.372103,"KMF":492.079934,"KPW":937.686045,"KRW":1504.27716,"KWD":0.321303,"KYD":0.8688,"KZT":539.363779,"LAK":22676.371243,"LBP":93299.749654,"LKR":309.111534,"LRD":204.726483,"LSL":19.326843,"LTL":3.076381,"LVL":0.630218,"LYD":5.115938,"MAD":10.414044,"MDL":19.417697,"MGA":4886.385748,"MKD":61.517516,"MMK":3383.963689,"MNT":3540.28543,"MOP":8.36714,"MRU":41.518943,"MUR":48.321927,"MVR":16.043579,"MWK":1808.174886,"MXN":21.384652,"MYR":4.574388,"MZN":66.569558,"NAD":19.326694,"NGN":1618.279078,"NIO":38.32021,"NOK":11.776476,"NPR":144.44079,"NZD":1.841823,"OMR":0.401111,"PAB":1.042615,"PEN":3.868991,"PGK":4.170102,"PHP":60.96782,"PKR":290.266074,"PLN":4.201194,"PYG":8238.885747,"QAR":3.793721,"RON":4.974214,"RSD":117.143021,"RUB":103.391208,"RWF":1451.85038,"SAR":3.907737,"SBD":8.792806,"SCR":15.644653,"SDG":626.166248,"SEK":11.466742,"SGD":1.405789,"SHP":0.858073,"SLE":23.832886,"SLL":21847.561123,"SOS":595.429625,"SRD":36.574988,"STD":21564.67283,"SVC":9.121998,"SYP":13546.436037,"SZL":19.326579,"THB":35.162981,"TJS":11.363758,"TMT":3.646556,"TND":3.328775,"TOP":2.440166,"TRY":37.314617,"TTD":7.054136,"TWD":34.242098,"TZS":2647.221821,"UAH":43.698769,"UGX":3846.854951,"USD":1.041873,"UYU":45.323895,"UZS":13523.514911,"VES":59.721688,"VND":26130.181218,"VUV":123.693285,"WST":2.918107,"XAF":657.467247,"XAG":0.033783,"XAU":0.000378,"XCD":2.815714,"XDR":0.796931,"XOF":655.86077,"XPF":119.331742,"YER":259.426304,"ZAR":19.324142,"ZMK":9378.168045,"ZMW":29.113434,"ZWL":335.482763}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRates() (0.3s)
+Then all currency rates should be displayed, the response should be successful
+[TEST PASSED] API responded successfully with full structure.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldBeSuccessful() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="09848911-87d9-43b1-be75-edc84ee2772e" testId="4195fc66-198e-f7bd-7dc8-b7e32b4d8dc6" testName="RequestCurrencyRatesWithAnInvalidAPIKey" computerName="MB0055" duration="00:00:00.2471910" startTime="2025-01-29T23:22:29.9311420+01:00" endTime="2025-01-29T23:22:30.1783330+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09848911-87d9-43b1-be75-edc84ee2772e">
+      <Output>
+        <StdOut>Given user has an invalid API key
+-&gt; done: FixerApiSteps.GivenUserHasAnInvalidAPIKey() (0.0s)
+When user requests currency rates
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a59999
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":false,"error":{"code":101,"type":"invalid_access_key","info":"You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"}}
+[API CALL] GET http://data.fixer.io/api/latest?access_key=****
+[RESPONSE] {"success":false,"error":{"code":101,"type":"invalid_access_key","info":"You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRates() (0.2s)
+Then the response should indicate an error with code 101
+Response JSON:
+{
+  "success": false,
+  "error": {
+    "code": 101,
+    "type": "invalid_access_key",
+    "info": "You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"
+  }
+}
+[TEST PASSED] API returned expected error response.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldIndicateAnErrorWithCode101() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="91d28227-2f33-4001-93ea-5d07f577de19" testId="890f325d-9035-73ed-71ee-ae8e20722c22" testName="FetchSpecificCurrencyRatesOfUSDAndGBP" computerName="MB0055" duration="00:00:00.2624180" startTime="2025-01-29T23:22:29.4139250+01:00" endTime="2025-01-29T23:22:29.6763420+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91d28227-2f33-4001-93ea-5d07f577de19">
+      <Output>
+        <StdOut>Given user has a valid API key
+-&gt; done: FixerApiSteps.GivenUserHasAValidAPIKey() (0.0s)
+When user requests currency rates of USD and GBP
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a51694&amp;symbols=USD,GBP
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"USD":1.041873,"GBP":0.837088}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRatesWithSymbols() (0.3s)
+Then USD and GBP rates should be displayed, the response should be successful
+Response JSON: {
+  "success": true,
+  "timestamp": 1738188558,
+  "base": "EUR",
+  "date": "2025-01-29",
+  "rates": {
+    "USD": 1.041873,
+    "GBP": 0.837088
+  }
+}
+-&gt; done: FixerApiSteps.ThenTheResponseShouldContainRatesForUSDAndGBP() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="11cb131d-6f9a-4bd5-8f68-7ba4f8c814e6" testId="51572482-9e80-7472-04fd-d1a2c973e6d6" testName="RequestCurrencyRatesFromAnInvalidEndpoint" computerName="MB0055" duration="00:00:00.2546670" startTime="2025-01-29T23:22:29.6764400+01:00" endTime="2025-01-29T23:22:29.9311070+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11cb131d-6f9a-4bd5-8f68-7ba4f8c814e6">
+      <Output>
+        <StdOut>Given user tries to access an invalid API endpoint
+-&gt; done: FixerApiSteps.GivenUserTriesToAccessAnInvalidApiEndpoint() (0.0s)
+When user requests currency rates from the invalid endpoint
+[REQUEST] GET http://data.fixer.io/api/12321312312?access_key=d25cbe978ecf15c4ac7fe2de84a51694
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":false,"error":{"code":302,"type":"invalid_date","info":"You have entered an invalid date. [Required format: date=YYYY-MM-DD]"}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRatesFromInvalidEndpoint() (0.3s)
+Then the response should indicate an error with code 302
+Response JSON:
+{
+  "success": false,
+  "error": {
+    "code": 302,
+    "type": "invalid_date",
+    "info": "You have entered an invalid date. [Required format: date=YYYY-MM-DD]"
+  }
+}
+[TEST PASSED] API returned expected error response.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldIndicateErrorWithCode302() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="FetchSpecificCurrencyRatesOfUSDAndGBP" storage="/users/ahmadraza/fixerapitests/bin/debug/net8.0/fixerapitests.dll" id="890f325d-9035-73ed-71ee-ae8e20722c22">
+      <Execution id="91d28227-2f33-4001-93ea-5d07f577de19" />
+      <TestMethod codeBase="/Users/ahmadraza/FixerApiTests/bin/Debug/net8.0/FixerApiTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="FixerApiTests.Features.FixerAPICurrencyRatesFeature" name="FetchSpecificCurrencyRatesOfUSDAndGBP" />
+    </UnitTest>
+    <UnitTest name="FetchAllCurrencyRatesWithAValidAPIKey" storage="/users/ahmadraza/fixerapitests/bin/debug/net8.0/fixerapitests.dll" id="e7f71ed1-46c7-db51-7442-7431eeb55745">
+      <Execution id="193e96a8-6256-4e39-ba88-2d630f660b16" />
+      <TestMethod codeBase="/Users/ahmadraza/FixerApiTests/bin/Debug/net8.0/FixerApiTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="FixerApiTests.Features.FixerAPICurrencyRatesFeature" name="FetchAllCurrencyRatesWithAValidAPIKey" />
+    </UnitTest>
+    <UnitTest name="RequestCurrencyRatesWithAnInvalidAPIKey" storage="/users/ahmadraza/fixerapitests/bin/debug/net8.0/fixerapitests.dll" id="4195fc66-198e-f7bd-7dc8-b7e32b4d8dc6">
+      <Execution id="09848911-87d9-43b1-be75-edc84ee2772e" />
+      <TestMethod codeBase="/Users/ahmadraza/FixerApiTests/bin/Debug/net8.0/FixerApiTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="FixerApiTests.Features.FixerAPICurrencyRatesFeature" name="RequestCurrencyRatesWithAnInvalidAPIKey" />
+    </UnitTest>
+    <UnitTest name="RequestCurrencyRatesFromAnInvalidEndpoint" storage="/users/ahmadraza/fixerapitests/bin/debug/net8.0/fixerapitests.dll" id="51572482-9e80-7472-04fd-d1a2c973e6d6">
+      <Execution id="11cb131d-6f9a-4bd5-8f68-7ba4f8c814e6" />
+      <TestMethod codeBase="/Users/ahmadraza/FixerApiTests/bin/Debug/net8.0/FixerApiTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="FixerApiTests.Features.FixerAPICurrencyRatesFeature" name="RequestCurrencyRatesFromAnInvalidEndpoint" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e7f71ed1-46c7-db51-7442-7431eeb55745" executionId="193e96a8-6256-4e39-ba88-2d630f660b16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4195fc66-198e-f7bd-7dc8-b7e32b4d8dc6" executionId="09848911-87d9-43b1-be75-edc84ee2772e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="890f325d-9035-73ed-71ee-ae8e20722c22" executionId="91d28227-2f33-4001-93ea-5d07f577de19" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="51572482-9e80-7472-04fd-d1a2c973e6d6" executionId="11cb131d-6f9a-4bd5-8f68-7ba4f8c814e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /Users/ahmadraza/FixerApiTests/bin/Debug/net8.0/FixerApiTests.dll
+   NUnit3TestExecutor discovered 4 of 4 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.5.0.0: Test execution complete
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="MB0055" outcome="Warning" timestamp="2025-01-29T23:22:29.4184470+01:00">
+        <Text>Given user has a valid API key
+-&gt; done: FixerApiSteps.GivenUserHasAValidAPIKey() (0.0s)
+When user requests currency rates
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a51694
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"AED":3.826777,"AFN":81.783858,"ALL":99.863179,"AMD":414.947015,"ANG":1.878925,"AOA":952.769476,"ARS":1095.180077,"AUD":1.672952,"AWG":1.875372,"AZN":1.76625,"BAM":1.960312,"BBD":2.105035,"BDT":126.671581,"BGN":1.95732,"BHD":0.392752,"BIF":3045.395522,"BMD":1.041873,"BND":1.408536,"BOB":7.203686,"BRL":6.101422,"BSD":1.042595,"BTC":1.0031392e-5,"BTN":90.2745,"BWP":14.510401,"BYN":3.411837,"BYR":20420.715784,"BZD":2.09419,"CAD":1.502282,"CDF":2964.129475,"CHF":0.945089,"CLF":0.037449,"CLP":1033.329289,"CNY":7.469291,"CNH":7.569079,"COP":4344.173884,"CRC":528.909866,"CUC":1.041873,"CUP":27.609641,"CVE":110.747602,"CZK":25.127847,"DJF":185.161954,"DKK":7.463167,"DOP":64.335359,"DZD":140.84979,"EGP":52.316208,"ERN":15.628099,"ETB":131.170257,"EUR":1,"FJD":2.442932,"FKP":0.858073,"GBP":0.837088,"GEL":3.000867,"GGP":0.858073,"GHS":15.938848,"GIP":0.858073,"GMD":75.01531,"GNF":9017.413057,"GTQ":8.064564,"GYD":218.122088,"HKD":8.117693,"HNL":26.674775,"HRK":7.688554,"HTG":136.263005,"HUF":408.133149,"IDR":16929.398509,"ILS":3.759047,"IMP":0.858073,"INR":90.206689,"IQD":1364.853963,"IRR":43849.846464,"ISK":145.695901,"JEP":0.858073,"JMD":164.056061,"JOD":0.739108,"JPY":161.693,"KES":134.923556,"KGS":91.111983,"KHR":4189.372103,"KMF":492.079934,"KPW":937.686045,"KRW":1504.27716,"KWD":0.321303,"KYD":0.8688,"KZT":539.363779,"LAK":22676.371243,"LBP":93299.749654,"LKR":309.111534,"LRD":204.726483,"LSL":19.326843,"LTL":3.076381,"LVL":0.630218,"LYD":5.115938,"MAD":10.414044,"MDL":19.417697,"MGA":4886.385748,"MKD":61.517516,"MMK":3383.963689,"MNT":3540.28543,"MOP":8.36714,"MRU":41.518943,"MUR":48.321927,"MVR":16.043579,"MWK":1808.174886,"MXN":21.384652,"MYR":4.574388,"MZN":66.569558,"NAD":19.326694,"NGN":1618.279078,"NIO":38.32021,"NOK":11.776476,"NPR":144.44079,"NZD":1.841823,"OMR":0.401111,"PAB":1.042615,"PEN":3.868991,"PGK":4.170102,"PHP":60.96782,"PKR":290.266074,"PLN":4.201194,"PYG":8238.885747,"QAR":3.793721,"RON":4.974214,"RSD":117.143021,"RUB":103.391208,"RWF":1451.85038,"SAR":3.907737,"SBD":8.792806,"SCR":15.644653,"SDG":626.166248,"SEK":11.466742,"SGD":1.405789,"SHP":0.858073,"SLE":23.832886,"SLL":21847.561123,"SOS":595.429625,"SRD":36.574988,"STD":21564.67283,"SVC":9.121998,"SYP":13546.436037,"SZL":19.326579,"THB":35.162981,"TJS":11.363758,"TMT":3.646556,"TND":3.328775,"TOP":2.440166,"TRY":37.314617,"TTD":7.054136,"TWD":34.242098,"TZS":2647.221821,"UAH":43.698769,"UGX":3846.854951,"USD":1.041873,"UYU":45.323895,"UZS":13523.514911,"VES":59.721688,"VND":26130.181218,"VUV":123.693285,"WST":2.918107,"XAF":657.467247,"XAG":0.033783,"XAU":0.000378,"XCD":2.815714,"XDR":0.796931,"XOF":655.86077,"XPF":119.331742,"YER":259.426304,"ZAR":19.324142,"ZMK":9378.168045,"ZMW":29.113434,"ZWL":335.482763}}
+[API CALL] GET http://data.fixer.io/api/latest?access_key=****
+[RESPONSE] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"AED":3.826777,"AFN":81.783858,"ALL":99.863179,"AMD":414.947015,"ANG":1.878925,"AOA":952.769476,"ARS":1095.180077,"AUD":1.672952,"AWG":1.875372,"AZN":1.76625,"BAM":1.960312,"BBD":2.105035,"BDT":126.671581,"BGN":1.95732,"BHD":0.392752,"BIF":3045.395522,"BMD":1.041873,"BND":1.408536,"BOB":7.203686,"BRL":6.101422,"BSD":1.042595,"BTC":1.0031392e-5,"BTN":90.2745,"BWP":14.510401,"BYN":3.411837,"BYR":20420.715784,"BZD":2.09419,"CAD":1.502282,"CDF":2964.129475,"CHF":0.945089,"CLF":0.037449,"CLP":1033.329289,"CNY":7.469291,"CNH":7.569079,"COP":4344.173884,"CRC":528.909866,"CUC":1.041873,"CUP":27.609641,"CVE":110.747602,"CZK":25.127847,"DJF":185.161954,"DKK":7.463167,"DOP":64.335359,"DZD":140.84979,"EGP":52.316208,"ERN":15.628099,"ETB":131.170257,"EUR":1,"FJD":2.442932,"FKP":0.858073,"GBP":0.837088,"GEL":3.000867,"GGP":0.858073,"GHS":15.938848,"GIP":0.858073,"GMD":75.01531,"GNF":9017.413057,"GTQ":8.064564,"GYD":218.122088,"HKD":8.117693,"HNL":26.674775,"HRK":7.688554,"HTG":136.263005,"HUF":408.133149,"IDR":16929.398509,"ILS":3.759047,"IMP":0.858073,"INR":90.206689,"IQD":1364.853963,"IRR":43849.846464,"ISK":145.695901,"JEP":0.858073,"JMD":164.056061,"JOD":0.739108,"JPY":161.693,"KES":134.923556,"KGS":91.111983,"KHR":4189.372103,"KMF":492.079934,"KPW":937.686045,"KRW":1504.27716,"KWD":0.321303,"KYD":0.8688,"KZT":539.363779,"LAK":22676.371243,"LBP":93299.749654,"LKR":309.111534,"LRD":204.726483,"LSL":19.326843,"LTL":3.076381,"LVL":0.630218,"LYD":5.115938,"MAD":10.414044,"MDL":19.417697,"MGA":4886.385748,"MKD":61.517516,"MMK":3383.963689,"MNT":3540.28543,"MOP":8.36714,"MRU":41.518943,"MUR":48.321927,"MVR":16.043579,"MWK":1808.174886,"MXN":21.384652,"MYR":4.574388,"MZN":66.569558,"NAD":19.326694,"NGN":1618.279078,"NIO":38.32021,"NOK":11.776476,"NPR":144.44079,"NZD":1.841823,"OMR":0.401111,"PAB":1.042615,"PEN":3.868991,"PGK":4.170102,"PHP":60.96782,"PKR":290.266074,"PLN":4.201194,"PYG":8238.885747,"QAR":3.793721,"RON":4.974214,"RSD":117.143021,"RUB":103.391208,"RWF":1451.85038,"SAR":3.907737,"SBD":8.792806,"SCR":15.644653,"SDG":626.166248,"SEK":11.466742,"SGD":1.405789,"SHP":0.858073,"SLE":23.832886,"SLL":21847.561123,"SOS":595.429625,"SRD":36.574988,"STD":21564.67283,"SVC":9.121998,"SYP":13546.436037,"SZL":19.326579,"THB":35.162981,"TJS":11.363758,"TMT":3.646556,"TND":3.328775,"TOP":2.440166,"TRY":37.314617,"TTD":7.054136,"TWD":34.242098,"TZS":2647.221821,"UAH":43.698769,"UGX":3846.854951,"USD":1.041873,"UYU":45.323895,"UZS":13523.514911,"VES":59.721688,"VND":26130.181218,"VUV":123.693285,"WST":2.918107,"XAF":657.467247,"XAG":0.033783,"XAU":0.000378,"XCD":2.815714,"XDR":0.796931,"XOF":655.86077,"XPF":119.331742,"YER":259.426304,"ZAR":19.324142,"ZMK":9378.168045,"ZMW":29.113434,"ZWL":335.482763}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRates() (0.3s)
+Then all currency rates should be displayed, the response should be successful
+[TEST PASSED] API responded successfully with full structure.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldBeSuccessful() (0.0s)
+</Text>
+      </RunInfo>
+      <RunInfo computerName="MB0055" outcome="Warning" timestamp="2025-01-29T23:22:29.6776070+01:00">
+        <Text>Given user has a valid API key
+-&gt; done: FixerApiSteps.GivenUserHasAValidAPIKey() (0.0s)
+When user requests currency rates of USD and GBP
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a51694&amp;symbols=USD,GBP
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":true,"timestamp":1738188558,"base":"EUR","date":"2025-01-29","rates":{"USD":1.041873,"GBP":0.837088}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRatesWithSymbols() (0.3s)
+Then USD and GBP rates should be displayed, the response should be successful
+Response JSON: {
+  "success": true,
+  "timestamp": 1738188558,
+  "base": "EUR",
+  "date": "2025-01-29",
+  "rates": {
+    "USD": 1.041873,
+    "GBP": 0.837088
+  }
+}
+-&gt; done: FixerApiSteps.ThenTheResponseShouldContainRatesForUSDAndGBP() (0.0s)
+</Text>
+      </RunInfo>
+      <RunInfo computerName="MB0055" outcome="Warning" timestamp="2025-01-29T23:22:29.9318540+01:00">
+        <Text>Given user tries to access an invalid API endpoint
+-&gt; done: FixerApiSteps.GivenUserTriesToAccessAnInvalidApiEndpoint() (0.0s)
+When user requests currency rates from the invalid endpoint
+[REQUEST] GET http://data.fixer.io/api/12321312312?access_key=d25cbe978ecf15c4ac7fe2de84a51694
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":false,"error":{"code":302,"type":"invalid_date","info":"You have entered an invalid date. [Required format: date=YYYY-MM-DD]"}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRatesFromInvalidEndpoint() (0.3s)
+Then the response should indicate an error with code 302
+Response JSON:
+{
+  "success": false,
+  "error": {
+    "code": 302,
+    "type": "invalid_date",
+    "info": "You have entered an invalid date. [Required format: date=YYYY-MM-DD]"
+  }
+}
+[TEST PASSED] API returned expected error response.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldIndicateErrorWithCode302() (0.0s)
+</Text>
+      </RunInfo>
+      <RunInfo computerName="MB0055" outcome="Warning" timestamp="2025-01-29T23:22:30.1790290+01:00">
+        <Text>Given user has an invalid API key
+-&gt; done: FixerApiSteps.GivenUserHasAnInvalidAPIKey() (0.0s)
+When user requests currency rates
+[REQUEST] GET http://data.fixer.io/api/latest?access_key=d25cbe978ecf15c4ac7fe2de84a59999
+[RESPONSE] Status Code: OK
+[RESPONSE BODY] {"success":false,"error":{"code":101,"type":"invalid_access_key","info":"You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"}}
+[API CALL] GET http://data.fixer.io/api/latest?access_key=****
+[RESPONSE] {"success":false,"error":{"code":101,"type":"invalid_access_key","info":"You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"}}
+-&gt; done: FixerApiSteps.WhenUserRequestsCurrencyRates() (0.2s)
+Then the response should indicate an error with code 101
+Response JSON:
+{
+  "success": false,
+  "error": {
+    "code": 101,
+    "type": "invalid_access_key",
+    "info": "You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]"
+  }
+}
+[TEST PASSED] API returned expected error response.
+-&gt; done: FixerApiSteps.ThenTheResponseShouldIndicateAnErrorWithCode101() (0.0s)
+</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

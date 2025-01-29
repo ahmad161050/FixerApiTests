@@ -101,16 +101,50 @@ namespace FixerApiTests.Steps
             _fixerApiPage.ApiKey = _fixerApiPage.InvalidApiKey;
         }
 
-        [Then(@"the response should indicate an error")]
-        public void ThenTheResponseShouldIndicateAnError()
+        [Then(@"the response should indicate an error with code 101")]
+        public void ThenTheResponseShouldIndicateAnErrorWithCode101()
         {
             Assert.IsFalse((bool)_jsonResponse["success"], "API request should have failed");
 
             Assert.IsNotNull(_jsonResponse["error"], "Expected 'error' field in response");
 
+            // Pretty-printing the JSON error response
+            Console.WriteLine("Response JSON:");
+            Console.WriteLine(_jsonResponse.ToString(Newtonsoft.Json.Formatting.Indented));
+
             TestContext.WriteLine($"[TEST PASSED] API returned expected error response.");
+        }
+        [Given(@"user tries to access an invalid API endpoint")]
+        public void GivenUserTriesToAccessAnInvalidApiEndpoint()
+        {
+            _fixerApiPage.Endpoint = _fixerApiPage.InvalidEndpoint;  // Set to invalid API endpoint
+        }
+
+        [When(@"user requests currency rates from the invalid endpoint")]
+        public async Task WhenUserRequestsCurrencyRatesFromInvalidEndpoint()
+        {
+            _response = await SendRequest(""); // No additional parameters needed
+        }
+
+        [Then(@"the response should indicate an error with code 404")]
+        public void ThenTheResponseShouldIndicateErrorWithCode404()
+        {
+            // Ensure response is not null
+            Assert.IsNotNull(_response, "Response object is null");
+
+            // Assert that the HTTP status code is 404 Not Found
+            Assert.AreEqual(System.Net.HttpStatusCode.NotFound, _response.StatusCode,
+                $"Expected 404 Not Found, but got {_response.StatusCode}");
+
+            Console.WriteLine($"[TEST PASSED] API returned expected 404 Not Found error.");
         }
 
     }
 }
+
+
+
+
+
+
 
