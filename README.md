@@ -18,16 +18,18 @@ This project is a **C# automation testing framework** built using **SpecFlow** a
 - **Test Runner:** dotnet test
 
 ---
-
 ## **Project Structure**
-FixerApiTests/
-├── Features/             # Contains SpecFlow feature files
-│   ├── FixerApi.feature  # Feature file defining test scenarios
-├── PageObjects/          # Page Object Model (POM) for API configurations
-│   ├── FixerApiPage.cs   # Stores API key, endpoint details
-├── StepDefinitions/      # Step definition files mapping to SpecFlow steps
-│   ├── FixerApiSteps.cs  # Implements test logic
-├── FixerApiTests.csproj  # Project configuration and dependencies
+| Folder/File           | Description |
+|----------------------|-------------|
+| `FixerApiTests/`       | Root project directory |
+| `Features/`           | Contains SpecFlow feature files |
+| `FixerApi.feature`    | Feature file defining test scenarios |
+| `PageObjects/`        | Page Object Model (POM) for API configurations |
+| `FixerApiPage.cs`     | Stores API key, endpoint details |
+| `StepDefinitions/`    | Step definition files mapping to SpecFlow steps |
+| `FixerApiSteps.cs`    | Implements test logic |
+| `FixerApiTests.csproj`| Project configuration and dependencies |
+
 
 
 ## **Setup & Installation**
@@ -49,3 +51,5 @@ dotnet restore
 ### **4 Running Tests**
 Running Tests:
 dotnet test
+
+
