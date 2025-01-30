@@ -101,19 +101,19 @@ namespace FixerApiTests.Steps
             _fixerApiPage.ValidApiKey = _fixerApiPage.InvalidApiKey;
         }
 
-        [Then(@"the response should indicate an error with code 101")]
-        public void ThenTheResponseShouldIndicateAnErrorWithCode101()
+        [Then(@"the response should indicate an error of invalid API")]
+        public void ThenTheResponseShouldIndicateAnErrorOfInvalidAPI()
         {
             Assert.IsFalse((bool)_jsonResponse["success"], "API request should have failed");
 
             Assert.IsNotNull(_jsonResponse["error"], "Expected 'error' field in response");
 
-            // Pretty-printing the JSON error response
             Console.WriteLine("Response JSON:");
             Console.WriteLine(_jsonResponse.ToString(Newtonsoft.Json.Formatting.Indented));
 
             TestContext.WriteLine($"[TEST PASSED] API returned expected error response.");
         }
+
         [Given(@"user tries to access an invalid API endpoint")]
         public void GivenUserTriesToAccessAnInvalidApiEndpoint()
         {
@@ -121,7 +121,43 @@ namespace FixerApiTests.Steps
         }
 
         [When(@"user requests currency rates from the invalid endpoint")]
-        public async Task WhenUserRequestsCurrencyRatesFromInvalidEndpoint()
+        public async Task WhenUserRequestsCurrencyRatesFromTheInvalidEndpoint()
+        {
+            _response = await SendRequest(""); // No additional parameters needed
+        }
+
+        [Then(@"the response should indicate an error of invalid endpoint")]
+        public async Task ThenTheResponseShouldIndicateErrorOfInvalidEndpoint()
+        {
+            // Ensure response is not null
+            Assert.IsNotNull(_response, "Response object is null");
+
+            // Read response content
+            var responseContent = await _response.Content.ReadAsStringAsync();
+            Console.WriteLine($"[RESPONSE BODY] {responseContent}");
+
+            // Parse JSON response
+            var responseJson = Newtonsoft.Json.Linq.JObject.Parse(responseContent);
+
+            // Check if "success" is false
+            if (responseJson["success"] != null && responseJson["success"].ToString().ToLower() == "false")
+            {
+                Console.WriteLine("[ERROR DETECTED] You have provided an invalid API endpoint.");
+            }
+            else
+            {
+                Assert.Fail("Expected an error response with 'success': false, but got a different response.");
+            }
+        }
+
+        [Given(@"user tries to access an unknwon API endpoint")]
+        public void GivenUserTriesToAccessAnUnknwonAPIEndpoint()
+        {
+            _fixerApiPage.ValidEndpoint = _fixerApiPage.UnknownEndpoint;  // Set to unknown API endpoint
+        }
+
+        [When(@"user requests currency rates from the unknown endpoint")]
+        public async Task WhenUserRequestsCurrencyRatesFromTheUnknownEndpoint()
         {
             _response = await SendRequest(""); // No additional parameters needed
         }

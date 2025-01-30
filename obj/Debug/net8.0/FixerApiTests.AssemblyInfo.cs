@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FixerApiTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c650a13dd2705f4224123222f2ae742ed3c70605")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3c2b39a759fb276adc08f08f6710831606e9fe5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FixerApiTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FixerApiTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
