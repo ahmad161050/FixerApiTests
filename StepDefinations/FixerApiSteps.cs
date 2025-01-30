@@ -55,16 +55,17 @@ namespace FixerApiTests.Steps
         public async Task WhenUserRequestsCurrencyRates()
         {
             _response = await SendRequest("");
+
+        }
+
+        [Then(@"all currency rates should be displayed, the response should be successful")]
+        public async Task ThenTheResponseShouldBeSuccessfulAsync()
+        {
             string responseContent = await _response.Content.ReadAsStringAsync();
             _jsonResponse = JObject.Parse(responseContent);
 
             TestContext.WriteLine($"[API CALL] GET {_fixerApiPage.ValidEndpoint}?access_key=****");
             TestContext.WriteLine($"[RESPONSE] {responseContent}");
-        }
-
-        [Then(@"all currency rates should be displayed, the response should be successful")]
-        public void ThenTheResponseShouldBeSuccessful()
-        {
             Assert.IsTrue((bool)_jsonResponse["success"], "API request failed");
 
             // Validate response structure
@@ -77,17 +78,18 @@ namespace FixerApiTests.Steps
         }
 
         // Scenario 2: Fetch specific currency rates (USD & GBP)
-  
+
         [When(@"user requests currency rates of USD and GBP")]
         public async Task WhenUserRequestsCurrencyRatesWithSymbols()
         {
             _response = await SendRequest("&symbols=USD,GBP");
-            _jsonResponse = JObject.Parse(await _response.Content.ReadAsStringAsync());
+
         }
 
         [Then(@"USD and GBP rates should be displayed, the response should be successful")]
-        public void ThenTheResponseShouldContainRatesForUSDAndGBP()
+        public async Task ThenTheResponseShouldContainRatesForUSDAndGBP()
         {
+            _jsonResponse = JObject.Parse(await _response.Content.ReadAsStringAsync());
             Assert.IsTrue((bool)_jsonResponse["success"], "API request failed");
 
             string[] symbols = _fixerApiPage.Symbols.Split(','); // Fetch symbols from POM
@@ -109,37 +111,44 @@ namespace FixerApiTests.Steps
         {
             _fixerApiPage.ValidApiKey = _fixerApiPage.InvalidApiKey;
         }
-
         [Then(@"the response should indicate an error of invalid API")]
-        public void ThenTheResponseShouldIndicateAnErrorOfInvalidAPI()
+        public async Task ThenTheResponseShouldIndicateAnErrorOfInvalidAPI()
         {
-            Assert.IsFalse((bool)_jsonResponse["success"], "API request should have failed");
+            Assert.IsNotNull(_response, "Response object is null.");
+            string responseContent = await _response.Content.ReadAsStringAsync();
+            Assert.IsFalse(string.IsNullOrEmpty(responseContent), "Response content is empty.");
 
-            Assert.IsNotNull(_jsonResponse["error"], "Expected 'error' field in response");
+            // Parse the JSON response
+            _jsonResponse = JObject.Parse(responseContent);
 
+            Assert.IsTrue(_jsonResponse.ContainsKey("success"), "Response does not contain 'success' field.");
+            Assert.IsFalse((bool)_jsonResponse["success"], "API request should have failed.");
+            Assert.IsTrue(_jsonResponse.ContainsKey("error"), "Expected 'error' field in response.");
+
+            // Log the response
             Console.WriteLine("Response JSON:");
             Console.WriteLine(_jsonResponse.ToString(Newtonsoft.Json.Formatting.Indented));
-
-            TestContext.WriteLine($"[TEST PASSED] API returned expected error response.");
         }
+
 
         // Scenario 4: Request currency rates from an invalid endpoint
 
         [Given(@"user tries to access an invalid API endpoint")]
         public void GivenUserTriesToAccessAnInvalidApiEndpoint()
         {
-            _fixerApiPage.ValidEndpoint = _fixerApiPage.InvalidEndpoint;  
+            _fixerApiPage.ValidEndpoint = _fixerApiPage.InvalidEndpoint;
         }
 
         [When(@"user requests currency rates from the invalid endpoint")]
         public async Task WhenUserRequestsCurrencyRatesFromTheInvalidEndpoint()
         {
-            _response = await SendRequest(""); 
+            _response = await SendRequest("");
         }
 
         [Then(@"the response should indicate an error of invalid endpoint")]
         public async Task ThenTheResponseShouldIndicateErrorOfInvalidEndpoint()
         {
+
             var responseContent = await _response.Content.ReadAsStringAsync();
             var responseJson = JObject.Parse(responseContent);
 
@@ -159,7 +168,7 @@ namespace FixerApiTests.Steps
         [When(@"user requests currency rates from the unknown endpoint")]
         public async Task WhenUserRequestsCurrencyRatesFromTheUnknownEndpoint()
         {
-            _response = await SendRequest(""); 
+            _response = await SendRequest("");
         }
 
         [Then(@"the response should indicate an error with code 404")]
