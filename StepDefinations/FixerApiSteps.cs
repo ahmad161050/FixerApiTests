@@ -15,11 +15,15 @@ namespace FixerApiTests.Steps
         private JObject _jsonResponse;
         private readonly FixerApiPage _fixerApiPage;
 
+        // Constructor initializing FixerApiPage object
         public FixerApiSteps()
         {
             _fixerApiPage = new FixerApiPage();
         }
 
+        /// Sends a GET request to the Fixer API.
+        /// <param name="queryParams">Additional query parameters to append to the API URL.</param>
+        /// <returns>Returns the HttpResponseMessage object from the API request.</returns>
         private async Task<HttpResponseMessage> SendRequest(string queryParams)
         {
             string requestUrl = $"{_fixerApiPage.ValidEndpoint}?access_key={_fixerApiPage.ValidApiKey}{queryParams}";
@@ -39,6 +43,7 @@ namespace FixerApiTests.Steps
             }
         }
 
+        // Scenario 1: Fetch all currency rates with a valid API key
 
         [Given(@"user has a valid API key")]
         public void GivenUserHasAValidAPIKey()
@@ -71,6 +76,8 @@ namespace FixerApiTests.Steps
             TestContext.WriteLine($"[TEST PASSED] API responded successfully with full structure.");
         }
 
+        // Scenario 2: Fetch specific currency rates (USD & GBP)
+  
         [When(@"user requests currency rates of USD and GBP")]
         public async Task WhenUserRequestsCurrencyRatesWithSymbols()
         {
@@ -94,6 +101,8 @@ namespace FixerApiTests.Steps
             Console.WriteLine($"Response JSON: {_jsonResponse.ToString()}");
         }
 
+        // Scenario 3: Request currency rates with an invalid API key
+
 
         [Given(@"user has an invalid API key")]
         public void GivenUserHasAnInvalidAPIKey()
@@ -114,69 +123,55 @@ namespace FixerApiTests.Steps
             TestContext.WriteLine($"[TEST PASSED] API returned expected error response.");
         }
 
+        // Scenario 4: Request currency rates from an invalid endpoint
+
         [Given(@"user tries to access an invalid API endpoint")]
         public void GivenUserTriesToAccessAnInvalidApiEndpoint()
         {
-            _fixerApiPage.ValidEndpoint = _fixerApiPage.InvalidEndpoint;  // Set to invalid API endpoint
+            _fixerApiPage.ValidEndpoint = _fixerApiPage.InvalidEndpoint;  
         }
 
         [When(@"user requests currency rates from the invalid endpoint")]
         public async Task WhenUserRequestsCurrencyRatesFromTheInvalidEndpoint()
         {
-            _response = await SendRequest(""); // No additional parameters needed
+            _response = await SendRequest(""); 
         }
 
         [Then(@"the response should indicate an error of invalid endpoint")]
         public async Task ThenTheResponseShouldIndicateErrorOfInvalidEndpoint()
         {
-            // Ensure response is not null
-            Assert.IsNotNull(_response, "Response object is null");
-
-            // Read response content
             var responseContent = await _response.Content.ReadAsStringAsync();
-            Console.WriteLine($"[RESPONSE BODY] {responseContent}");
+            var responseJson = JObject.Parse(responseContent);
 
-            // Parse JSON response
-            var responseJson = Newtonsoft.Json.Linq.JObject.Parse(responseContent);
+            Assert.IsFalse((bool)responseJson["success"], "Expected API failure");
 
-            // Check if "success" is false
-            if (responseJson["success"] != null && responseJson["success"].ToString().ToLower() == "false")
-            {
-                Console.WriteLine("[ERROR DETECTED] You have provided an invalid API endpoint.");
-            }
-            else
-            {
-                Assert.Fail("Expected an error response with 'success': false, but got a different response.");
-            }
+            Console.WriteLine("[ERROR DETECTED] You have provided an invalid API endpoint.");
         }
+
+        // Scenario 5: Request currency rates from an unknown endpoint (404)
 
         [Given(@"user tries to access an unknwon API endpoint")]
         public void GivenUserTriesToAccessAnUnknwonAPIEndpoint()
         {
-            _fixerApiPage.ValidEndpoint = _fixerApiPage.UnknownEndpoint;  // Set to unknown API endpoint
+            _fixerApiPage.ValidEndpoint = _fixerApiPage.UnknownEndpoint;
         }
 
         [When(@"user requests currency rates from the unknown endpoint")]
         public async Task WhenUserRequestsCurrencyRatesFromTheUnknownEndpoint()
         {
-            _response = await SendRequest(""); // No additional parameters needed
+            _response = await SendRequest(""); 
         }
 
         [Then(@"the response should indicate an error with code 404")]
         public void ThenTheResponseShouldIndicateErrorWithCode404()
         {
-            // Ensure response is not null
-            Assert.IsNotNull(_response, "Response object is null");
-
-            // Assert that the HTTP status code is 404 Not Found
             Assert.AreEqual(System.Net.HttpStatusCode.NotFound, _response.StatusCode,
                 $"Expected 404 Not Found, but got {_response.StatusCode}");
 
             Console.WriteLine($"[TEST PASSED] API returned expected 404 Not Found error.");
         }
-        // ==========================
+
         // Scenario 6: Request currency rates without an API key
-        // ==========================
 
         [Given(@"user does not provide an API key")]
         public void GivenUserDoesNotProvideAnAPIKey()
@@ -190,9 +185,8 @@ namespace FixerApiTests.Steps
             // TODO: Implement validation for missing API key error response
         }
 
-        // ==========================
+
         // Scenario 7: Request currency rates with an unsupported base currency
-        // ==========================
 
         [Given(@"user sets the base currency to USD")]
         public void GivenUserSetsTheBaseCurrencyToUSD()
