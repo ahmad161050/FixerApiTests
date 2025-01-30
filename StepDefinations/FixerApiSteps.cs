@@ -174,6 +174,37 @@ namespace FixerApiTests.Steps
 
             Console.WriteLine($"[TEST PASSED] API returned expected 404 Not Found error.");
         }
+        // ==========================
+        // Scenario 6: Request currency rates without an API key
+        // ==========================
+
+        [Given(@"user does not provide an API key")]
+        public void GivenUserDoesNotProvideAnAPIKey()
+        {
+            // TODO: Implement step to make an API request without an API key
+        }
+
+        [Then(@"the response should indicate an error of missing API key")]
+        public void ThenTheResponseShouldIndicateAnErrorOfMissingAPIKey()
+        {
+            // TODO: Implement validation for missing API key error response
+        }
+
+        // ==========================
+        // Scenario 7: Request currency rates with an unsupported base currency
+        // ==========================
+
+        [Given(@"user sets the base currency to USD")]
+        public void GivenUserSetsTheBaseCurrencyToUSD()
+        {
+            // TODO: Implement step to set base currency to an unsupported currency (e.g., USD)
+        }
+
+        [Then(@"the response should indicate an error of unsupported base currency")]
+        public void ThenTheResponseShouldIndicateAnErrorOfUnsupportedBaseCurrency()
+        {
+            // TODO: Implement validation for unsupported base currency error response
+        }
 
     }
 }

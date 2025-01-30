@@ -29,3 +29,17 @@ Feature: Fixer API Currency Rates
     Given user tries to access an unknwon API endpoint
     When user requests currency rates from the unknown endpoint
     Then the response should indicate an error with code 404
+
+  # Additional Tests
+
+  # When user requests currency rates without providing an API key, user should get an error of missing API key.
+  Scenario: Request currency rates without an API key
+    Given user does not provide an API key
+    When user requests currency rates
+    Then the response should indicate an error of missing API key
+
+  # When user requests currency rates using an unsupported base currency, user should get an error.
+  Scenario: Request currency rates with an unsupported base currency
+    Given user sets the base currency to USD
+    When user requests currency rates
+    Then the response should indicate an error of unsupported base currency
